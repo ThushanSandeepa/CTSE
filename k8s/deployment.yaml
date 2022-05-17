@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ctse-k8s
+spec:
+  selector:
+    matchLabels:
+      app: ctse-k8s
+  replicas: 2
+  template:
+    metadata: 
+      labels:
+        app: ctse-k8s
+    spec:
+      containers:
+        - name: ctse-k8s
+          image: thushan0/ctse-k8s
+          ports: 
+            - containerPort: 8087
